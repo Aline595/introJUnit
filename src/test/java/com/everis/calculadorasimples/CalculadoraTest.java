@@ -26,6 +26,7 @@ public class CalculadoraTest {
     static Calculadora calculadora;
 
     @Test
+    //@Disabled // desabilita teste
     public void testaSomaMenosIngenuo() {
         Calculadora myCalc = new Calculadora();
 
@@ -68,16 +69,16 @@ public class CalculadoraTest {
     }
     // Outros: @BeforeEach, @AfterEach, @AfterAll
 
-    @DisplayName("Valida múltiplas somas com informações em CSV")
-    @ParameterizedTest
-    @CsvSource({ "1.0, 1.0, 2.0", "2.0, 3.0, 5.0" })
+    @DisplayName("Valida múltiplas somas com informações em CSV") // descreve o que faz o teste
+    @ParameterizedTest // indica que receberá parametros 
+    @CsvSource({ "1.0, 1.0, 2.0", "2.0, 3.0, 5.0" }) // indica formato do arquivo(csv) e quais são os dados
     void validaMultiplasSomasCSV(double parcela1, double parcela2, double resultadoEsperado) {
         assertEquals(resultadoEsperado, calculadora.soma(parcela1, parcela2));
     }
 
     @DisplayName("Valida múltiplas somas com informações em arquivo CSV")
     @ParameterizedTest
-    @CsvFileSource(resources = "/data.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/data.csv", numLinesToSkip = 1) //Pega parametros do arquivo planilha csv
     void validaMultiplasSomasArqCSV(double parcela1, double parcela2, double resultadoEsperado) {
         assertEquals(resultadoEsperado, calculadora.soma(parcela1, parcela2));
     }

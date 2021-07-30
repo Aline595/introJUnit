@@ -5,25 +5,20 @@ package com.everis.calculadorasimples;
  * 
  * Calculadora simples que executa as quatro operações básicas
  */
-public class Calculadora
-{
-    public double soma( double parcela1, double parcela2 )
-    {
+public class Calculadora{
+    public double soma( double parcela1, double parcela2 ){
         return parcela1 + parcela2;
     }
 
-    public double subtrai( double minuendo, double subtraendo )
-    {
+    public double subtrai( double minuendo, double subtraendo ){
         return minuendo - subtraendo;
     }
 
-    public double multiplica( double fator1, double fator2 )
-    {
+    public double multiplica( double fator1, double fator2 ){
         return fator1 * fator2;
     }
 
-    public double divide( double dividendo, double divisor )
-    {
+    public double divide( double dividendo, double divisor ){
         return dividendo / divisor;
     }
 }
